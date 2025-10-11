@@ -1,0 +1,18 @@
+{
+    "validation_accuracy": 0.8197981715202332,
+    "validation_loss": 0.6039507985115051,
+    "training_accuracy": 0.8747297525405884,
+    "training_loss": 0.4512147009372711,
+    "class_names": [
+        "bacterial_leaf_blight",
+        "bacterial_leaf_streak",
+        "bacterial_panicle_blight",
+        "blast",
+        "brown_spot",
+        "dead_heart",
+        "downy_mildew",
+        "hispa",
+        "normal",
+        "tungro"
+    ]
+}

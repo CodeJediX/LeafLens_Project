@@ -1,0 +1,16 @@
+{
+    "validation_accuracy": 0.8192090392112732,
+    "validation_loss": 0.5615521669387817,
+    "training_accuracy": 0.959039568901062,
+    "training_loss": 0.22630318999290466,
+    "class_names": [
+        "Anthracnose",
+        "algal leaf",
+        "bird eye spot",
+        "brown blight",
+        "gray light",
+        "healthy",
+        "red leaf spot",
+        "white spot"
+    ]
+}

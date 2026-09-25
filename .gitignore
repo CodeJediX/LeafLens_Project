@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.DS_Store
+.streamlit/secrets.toml
+
+# Training data should live outside the product repository.
+data/
+
+# Local reports and exports.
+reports/
+*.log

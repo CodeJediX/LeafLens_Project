@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Private, in-browser AI screening for visible paddy and tea leaf conditions.">
+  <title>LeafLens — Crop health, clearly seen</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="LeafLens home"><span class="mark">L</span>LeafLens</a>
+    <span class="privacy"><i></i> Photos stay on this device</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="kicker">AI crop health screening</p>
+      <h1>See the signal<br>in every <em>leaf.</em></h1>
+      <p class="lede">Screen paddy and tea leaves for visible disease patterns, understand the model’s real confidence, and leave with practical next checks.</p>
+      <div class="trust"><span>18 trained classes</span><span>On-device analysis</span><span>No upload required</span></div>
+    </section>
+
+    <section class="scanner" aria-labelledby="scanner-title">
+      <p class="scan-label">FIELD SCAN / 01</p>
+      <div class="scan-grid">
+        <div class="setup">
+          <p class="step">Step 01</p>
+          <h2 id="scanner-title">Choose the crop</h2>
+          <p class="muted">Select the model that matches the photographed leaf.</p>
+          <label for="crop">Crop model</label>
+          <select id="crop"><option value="paddy">Paddy rice · 10 conditions</option><option value="tea">Tea · 8 conditions</option></select>
+          <aside><strong>For a useful scan</strong>Photograph one leaf in natural light. Keep the symptom sharp and fill most of the frame.</aside>
+        </div>
+
+        <div class="capture">
+          <p class="step">Step 02</p>
+          <h2>Add a clear leaf photo</h2>
+          <p class="muted">JPG or PNG · processed locally in your browser</p>
+          <label class="drop" for="photo">
+            <span class="drop-icon">↥</span>
+            <span><strong>Choose a leaf photo</strong><small>Tap to browse your device</small></span>
+          </label>
+          <input id="photo" type="file" accept="image/jpeg,image/png">
+          <div id="preview-wrap" class="preview-wrap" hidden>
+            <img id="preview" alt="Selected leaf preview">
+            <div><p id="filename"></p><button id="analyze" type="button">Analyze leaf</button></div>
+          </div>
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="result" hidden aria-live="polite">
+      <article class="diagnosis">
+        <p id="result-overline" class="result-overline"></p>
+        <h2 id="result-name"></h2>
+        <p class="confidence"><strong id="result-confidence"></strong><span>model confidence</span></p>
+        <p id="result-summary"></p>
+        <div id="uncertain" class="warning" hidden><strong>Confirmation recommended.</strong> Retake the photo and ask an agronomist before treatment.</div>
+      </article>
+      <article class="actions">
+        <p class="step">Next checks</p><h2>Act with care</h2>
+        <ol id="action-list"></ol>
+      </article>
+      <article class="matches"><h3>Model’s top matches</h3><div id="rank-list"></div></article>
+      <button id="download" class="secondary" type="button">Download field report</button>
+    </section>
+
+    <section class="facts"><div><strong>10</strong><span>Paddy conditions</span></div><div><strong>8</strong><span>Tea conditions</span></div><div><strong>≈82%</strong><span>Held-out accuracy</span></div></section>
+    <p class="disclaimer"><strong>Responsible-use note:</strong> LeafLens is an image-screening aid, not a laboratory test or a replacement for an agronomist. Similar symptoms can have different causes. Confirm results before applying pesticides and follow local regulations and product labels.</p>
+  </main>
+</body>
+</html>

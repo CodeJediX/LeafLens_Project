@@ -2,6 +2,10 @@
 
 LeafLens is a field-friendly AI screening app for visible paddy and tea leaf conditions. Upload a clear photograph, select the crop, and receive the model's top match, its real confidence score, alternative matches, and practical next checks.
 
+**Live app:** [codejedix.github.io/LeafLens_Project](https://codejedix.github.io/LeafLens_Project/)
+
+The hosted edition uses LiteRT to run the selected model inside the visitor's browser. Leaf photos stay on the device and no application server is required.
+
 > LeafLens is a screening aid—not a laboratory diagnosis or a substitute for an agronomist. Confirm uncertain or high-impact results before treatment.
 
 ## What changed in v2
@@ -16,6 +20,7 @@ LeafLens is a field-friendly AI screening app for visible paddy and tea leaf con
 - Delayed TensorFlow loading until analysis, improving first render time.
 - Reduced production dependencies from a full notebook environment to four direct packages.
 - Added unit tests, CI, a non-root Docker image, health checks, and Streamlit configuration.
+- Added a browser-native GitHub Pages edition with quantized on-device models.
 
 ## Supported classes
 
@@ -63,6 +68,16 @@ Open `http://localhost:8501`.
 5. Deploy.
 
 No secrets are required. The first prediction can be slower while TensorFlow and the selected model initialise.
+
+## GitHub Pages deployment
+
+The `docs/` directory contains the static hosted edition. Its two `.tflite` models are generated from the tracked Keras files with:
+
+```bash
+python scripts/export_tflite.py
+```
+
+GitHub Pages is configured to publish `docs/` from `main`. The first scan downloads only the selected crop model; later scans in the same visit reuse it.
 
 ## Test
 
